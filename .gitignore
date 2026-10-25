@@ -1,0 +1,16 @@
+# Data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.env
+
+# Secrets and OS
+*.log
+.DS_Store
+Thumbs.db
