@@ -151,5 +151,5 @@ Dashboards, screenshots and key insights will be added here at the end of the pr
 
 ## 11. Author
 
-**Your Name**: student in software engineering, ENSI (Université de la Manouba)
-GitHub: [fidayahyaoui7](https://github.com/fidayahyaoui7) | LinkedIn: *add your link*
+fida yahyaoui: student in software engineering, ENSI (Université de la Manouba)
+GitHub: [fidayahyaoui7](https://github.com/fidayahyaoui7) 
