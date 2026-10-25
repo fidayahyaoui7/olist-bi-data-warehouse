@@ -55,7 +55,19 @@ Period covered: 2016-09-04 to 2018-10-17.
 | 18 | Orders with 2+ payments | 2,961 (3.0%) | Aggregate payments per order before joining |
 | 19 | Orders with 2+ reviews | 547 | Keep the latest review per order (review_answer_timestamp) |
 
-## 5. Still to verify
 
-- Whether payment totals match item price + freight per order.
-- Zip prefixes in customers and sellers that are missing from geolocation.
+## 5. Design validation results
+
+Checks run in `notebooks/02_design_validation.ipynb`.
+
+| # | Check | Result | Handling rule |
+|---|---|---|---|
+| 20 | Payment total vs items price + freight | 98,362 of 98,665 match (99.69%), 303 differ (0.31%). In 264 cases the customer paid more (median +5.41), in 39 less (min -51.62, max +182.81). 91% are credit card orders with a median of 5 installments | payment_total comes from the payments table. fact_orders also stores items_total, and an ETL check reconciles both and reports the gap |
+| 21 | Orders without payment or without items | 1 order has items but no payment, 775 have payments but no items. Together with the 98,665 matched, this covers all 99,441 orders | fact_orders keeps all orders (items_count = 0 for the 775). fact_sales contains none of them |
+| 22 | Zip prefixes missing in geolocation | 278 customer rows (157 zips), 7 sellers | Left join, latitude and longitude NULL, city and state kept from the source tables |
+| 23 | Customers with several addresses | 250 with more than 1 zip, 122 more than 1 city, 39 more than 1 state (of 96,096) | SCD Type 1: dim_customer keeps the address of the latest order |
+
+
+## 6. Still to verify
+
+- Cause of the payment mismatches: the pattern is consistent with installment interest (mostly credit card, many installments, mostly positive gaps), but 39 negative gaps and 21 boleto or debit orders are not explained. Hypothesis, not proven. Possible test: compare gaps for 1 installment vs several.
