@@ -50,13 +50,12 @@ Period covered: 2016-09-04 to 2018-10-17.
 | # | Check | Result | Handling rule |
 |---|---|---|---|
 | 15 | Categories without translation | 2 (pc_gamer, portateis_cozinha_e_preparadores_de_alimentos) | Add manual mapping in the product dimension |
-| 16 | Orders without any item | 775 (statuses to confirm) | Sales fact is at item grain, so these orders are absent from it. Order counts and cancellation rate are computed from the orders table |
+| 16 | Orders without any item | 775: 603 unavailable, 164 canceled, 5 created, 2 invoiced, 1 shipped, 0 delivered | These orders are absent from the sales fact (item grain). Revenue filters on status because 461 canceled orders do have items. Cancellation rate is computed on the orders table |
 | 17 | Items with unknown product | 0 | Plain join items to products is safe |
 | 18 | Orders with 2+ payments | 2,961 (3.0%) | Aggregate payments per order before joining |
 | 19 | Orders with 2+ reviews | 547 | Keep the latest review per order (review_answer_timestamp) |
 
 ## 5. Still to verify
 
-- Statuses of the 775 orders without items.
 - Whether payment totals match item price + freight per order.
 - Zip prefixes in customers and sellers that are missing from geolocation.
