@@ -90,38 +90,8 @@ olist-bi-data-warehouse/
 └── README.md
 
 
-## 7. Roadmap and progress
 
-### Step 1: Business framing, setup and data understanding
-- [x] Create the GitHub repository and project structure
-- [x] Configure `.gitignore` (data and secrets excluded)
-- [x] Write the project README
-- [ ] Define stakeholders, business questions and KPIs (`docs/business_requirements.md`)
-- [ ] Download the dataset and profile it (`notebooks/01_data_profiling.ipynb`)
-- [ ] Document data quality issues (`docs/data_quality_notes.md`)
-- [ ] Draw the source ER diagram (`docs/source_erd.png`)
-
-### Step 2: Data warehouse design
-- [ ] Define the grain of each fact table
-- [ ] Design fact tables (sales, deliveries) and dimensions (customer, product, seller, date, geography)
-- [ ] Create the star schema in PostgreSQL
-
-### Step 3: ETL pipeline
-- [ ] Extract and clean the source data
-- [ ] Load staging, then dimensions, then facts
-- [ ] Add data quality checks and logging
-
-### Step 4: Dashboards
-- [ ] Connect Power BI to the warehouse
-- [ ] Build DAX measures for the KPIs
-- [ ] Create executive, operations and customer dashboards
-
-### Step 5: Insights and documentation
-- [ ] RFM customer segmentation and cohort retention
-- [ ] "Findings and recommendations" page
-- [ ] Final documentation, screenshots and demo
-
-## 8. Data quality points to handle
+## 7. Data quality points to handle
 
 Identified from the dataset documentation, to be confirmed during profiling:
 
@@ -131,7 +101,7 @@ Identified from the dataset documentation, to be confirmed during profiling:
 - The geolocation table has many rows per zip-code prefix and must be aggregated
 - Product category names are in Portuguese and need translation
 
-## 9. How to run (will be completed as the project progresses)
+## 8. How to run (will be completed as the project progresses)
 
 ```bash
 # 1. Clone the repository
@@ -145,11 +115,11 @@ python -m venv .venv
 # Windows: .venv\Scripts\activate    |    Linux/Mac: source .venv/bin/activate
 ```
 
-## 10. Results
+## 9. Results
 
 Dashboards, screenshots and key insights will be added here at the end of the project.
 
-## 11. Author
+## 10. Author
 
 fida yahyaoui: student in software engineering, ENSI (Université de la Manouba)
 GitHub: [fidayahyaoui7](https://github.com/fidayahyaoui7) 
