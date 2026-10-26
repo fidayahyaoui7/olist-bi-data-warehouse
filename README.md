@@ -49,21 +49,32 @@ The focus is not only on tools, but on answering real business questions with we
 
 ## 4. Planned architecture
 CSV files (Kaggle)
+
 |
+
 v
+
 Extract + Clean (Python / pandas)
+
 |
+
 v
+
 Staging layer (PostgreSQL)
+
 |
+
 v
+
 Data warehouse (fact constellation (galaxy schema))
+
 |
+
 v
+
 Power BI (DAX measures, dashboards)
 
 
-An architecture diagram will be added in `docs/` once the design is finalized.
 
 ## 5. Tech stack
 
@@ -75,23 +86,7 @@ An architecture diagram will be added in `docs/` once the design is finalized.
 | Visualization | Power BI (DAX) |
 | Version control | Git, GitHub |
 
-## 6. Repository structure
-
-olist-bi-data-warehouse/
-├── data/
-│ ├── raw/ # original CSV files (not versioned)
-│ └── processed/ # cleaned data (not versioned)
-├── sql/ # schema creation and transformation scripts
-├── etl/ # Python ETL scripts
-├── notebooks/ # exploration and profiling notebooks
-├── dashboards/ # Power BI files and screenshots
-├── docs/ # requirements, data dictionary, ERD, architecture
-├── .gitignore
-└── README.md
-
-
-
-## 7. Data quality points to handle
+## 6. Data quality points to handle
 
 Identified from the dataset documentation, to be confirmed during profiling:
 
@@ -101,25 +96,11 @@ Identified from the dataset documentation, to be confirmed during profiling:
 - The geolocation table has many rows per zip-code prefix and must be aggregated
 - Product category names are in Portuguese and need translation
 
-## 8. How to run (will be completed as the project progresses)
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/fidayahyaoui7/olist-bi-data-warehouse.git
-cd olist-bi-data-warehouse
-
-# 2. Download the dataset from Kaggle and place the CSVs in data/raw/
-
-# 3. Create a virtual environment and install dependencies
-python -m venv .venv
-# Windows: .venv\Scripts\activate    |    Linux/Mac: source .venv/bin/activate
-```
-
-## 9. Results
+## 7. Results
 
 Dashboards, screenshots and key insights will be added here at the end of the project.
 
-## 10. Author
+## 8. Author
 
 fida yahyaoui: student in software engineering, ENSI (Université de la Manouba)
 GitHub: [fidayahyaoui7](https://github.com/fidayahyaoui7) 
