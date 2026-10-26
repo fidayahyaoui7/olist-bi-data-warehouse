@@ -57,7 +57,7 @@ v
 Staging layer (PostgreSQL)
 |
 v
-Data warehouse (star schema: fact + dimension tables)
+Data warehouse (fact constellation (galaxy schema))
 |
 v
 Power BI (DAX measures, dashboards)
