@@ -14,3 +14,5 @@ __pycache__/
 *.log
 .DS_Store
 Thumbs.db
+# Personal notes (not published)
+docs/learning_notes.md
