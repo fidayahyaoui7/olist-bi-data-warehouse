@@ -45,7 +45,7 @@ The focus is not only on tools, but on answering real business questions with we
 | `olist_geolocation_dataset` | Zip code to latitude/longitude | one geolocation point |
 | `product_category_name_translation` | Portuguese to English categories | one category |
 
-> The raw data is not stored in this repository (see `.gitignore`). Download it from Kaggle and place the CSV files in `data/raw/`.
+
 
 ## 4. Planned architecture
 CSV files (Kaggle)
