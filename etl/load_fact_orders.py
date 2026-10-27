@@ -113,7 +113,7 @@ def main():
         assert df[c].isin(valid).all(), f"{c} has dates missing from dim_date"
 
     both = df.dropna(subset=["items_total", "payment_total"])
-    mismatch = ((both.payment_total - both.items_total).abs() > 0.01).sum()
+    mismatch = ((both.payment_total - both.items_total).round(2).abs() > 0.01).sum()
     print("Rows to load:", len(df))
     print("Orders without items:", (df.items_count == 0).sum())
     print("Orders with delivery metrics:", n_delivered)
